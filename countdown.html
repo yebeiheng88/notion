@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+const myDate = new Date('Mar 21, 2024 00:00:00');
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -66,35 +66,34 @@
 
 
 <script>
-    function CountDownTimer  () {
-    left_days = document.getElementById("days");
-    left_hours = document.getElementById("hours");
-    left_minutes = document.getElementById("minutes");
-    left_seconds = document.getElementById("seconds");
- 
-    }
-    function showRemaining (){
-    now = new Date();
- 
-   
-    if(now.getDay() == 0 ){
-      d = 140
-    }
-    else{
-       d = now.getDay() - 1
-    }
-    days = 140 - d ;
-    hours = 23 - now.getHours();
-    minutes = 59 - now.getMinutes();
-    seconds = 59 - now.getSeconds();
-    left_days.innerHTML = days + "<br> <span class=\"small\"> days </span>"
-    left_hours.innerHTML = hours + "<br> <span class=\"small\"> hours</span>";
-    left_minutes.innerHTML = minutes + "<br> <span class=\"small\">mins</span>";
-    left_seconds.innerHTML = seconds + "<br> <span class=\"small\">secs</span>";
-    }
+    fconst year = new Date().getFullYear();
+const myDate = new Date('Mar 21, 2024 00:00:00');
+console.log(myDate);
 
-timer = setInterval (showRemaining, 1000) 
-CountDownTimer() ;
+// countdown
+let timer = setInterval(function() {
+
+  // get today's date
+  const today = new Date().getTime();
+
+  // get the difference
+  const diff = myDate - today;
+
+  // math
+  let days = Math.floor(diff / (1000 * 60 * 60 * 24));
+  let hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+  let minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+  let seconds = Math.floor((diff % (1000 * 60)) / 1000);
+
+  // display
+  document.getElementById("days").innerHTML=days
+  document.getElementById("hours").innerHTML=hours
+  document.getElementById("minutes").innerHTML=minutes
+  document.getElementById("seconds").innerHTML=seconds
+
+
+
+}, 1);
 </script>
 </body>
 </html>
