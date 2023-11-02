@@ -57,7 +57,7 @@
         <h2 class="box" id="seconds"></h2>
 
         <h3>
-            Left in <br>This Week
+            Time Left <br>Until March 2024 MTLE
         </h3>
     </div>
        
@@ -67,7 +67,7 @@
 
 <script>
     const year = new Date().getFullYear();
-const myDate = new Date('Oct 15, 2024 00:00:00');
+const myDate = new Date('Mar 21, 2024 00:00:00');
 console.log(myDate);
 
 // countdown
